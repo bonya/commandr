@@ -614,7 +614,7 @@ class Commandr(object):
       by_order = cmp(appear_order.index(a.name), appear_order.index(b.name))
       return by_cat or by_order
 
-    for command in sorted(self._command_list, key=_compare_commands):
+    for command in sorted(self._command_list, cmp=_compare_commands):
       if command.category != last_category:
         print("%s Commands:" % (command.category or "General"))
         last_category = command.category
