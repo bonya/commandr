@@ -609,12 +609,17 @@ class Commandr(object):
 
     last_category = -1
 
+    from functools import cmp_to_key
+
+    def cmp(a, b):
+      return (a > b) - (a < b)
+
     def _compare_commands(a, b):
       by_cat = cmp(categories.index(a.category), categories.index(b.category))
       by_order = cmp(appear_order.index(a.name), appear_order.index(b.name))
       return by_cat or by_order
 
-    for command in sorted(self._command_list, cmp=_compare_commands):
+    for command in sorted(self._command_list, key=cmp_to_key(_compare_commands)):
       if command.category != last_category:
         print("%s Commands:" % (command.category or "General"))
         last_category = command.category
