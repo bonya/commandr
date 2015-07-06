@@ -39,4 +39,4 @@ SetOptions = _COMMANDR.SetOptions
 Usage = _COMMANDR.Usage
 
 # Export the decorator utils.
-from functools_util import update_wrapper, wraps, MonkeyPatchFunctools
+from commandr.functools_util import update_wrapper, wraps, MonkeyPatchFunctools
