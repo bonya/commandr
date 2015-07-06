@@ -25,11 +25,10 @@ __all__ = [
     'CommandrDuplicateMainError']
 
 # Export the global Commandr object methods.
-from commandr import (
-  Commandr,
-  CommandrError,
-  CommandrUsageError,
-  CommandrDuplicateMainError)
+from commandr import Commandr
+from commandr import CommandrError
+from commandr import CommandrUsageError
+from commandr import CommandrDuplicateMainError
 
 _COMMANDR = Commandr()
 
